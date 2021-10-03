@@ -1,0 +1,197 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+body{
+    background: url("../image/profilealt.png");
+}
+
+
+
+
+.navigation {
+    background: #222;
+    opacity: 80%;
+}
+
+.navigation ul{
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.navigation ul li{
+    float: left;
+}
+
+.navigation ul li a{
+    display: block;
+    text-decoration: none;
+    color: rgb(128, 128, 128);
+    font: 1rem Arial, sans-serif;
+    padding: 1rem;
+    transition: 0.3s;
+}
+
+.navigation ul li a:hover {
+    background: rgb(54, 54, 54);
+    color: rgb(255, 242, 53);
+}
+
+.contact{
+    float: right;
+}
+
+
+
+
+
+
+
+.spacer{
+    display: block;
+    height: 14rem;
+    text-align: center;
+    padding: 14rem 0 0 0;
+    font: 4rem 'Raleway', sans-serif;
+    color: white;
+}
+
+.spacerh1{
+    padding: 0.4rem;
+    background:rgb(255, 242, 53);
+    border-radius: 0.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+    background: #222;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+}
+
+footer ul li{
+    list-style-type: none;
+    overflow: hidden;
+}
+
+footer ul li{
+    float: left;
+}
+
+footer ul li a, footer ul li p {
+    display: block;
+    text-decoration: none;
+    color: rgb(128, 128, 128);
+    font: 1rem Arial, sans-serif;
+    padding: 1rem;
+    transition: 0.3s;
+}
+
+footer ul li a:hover {
+    background: rgb(54, 54, 54);
+    color: rgb(255, 242, 53);
+}
+
+
+
+
+
+
+
+
+
+.insperations {
+    margin: 18rem 0 0 0;
+    background: #222;
+    width: 100%;
+    display: flex;
+}
+
+.insperations ul li{
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.insperations ul li{
+    float: left;
+}
+
+.insperations ul li a{
+    display: block;
+    text-decoration: none;
+    color: rgb(128, 128, 128);
+    font: 1rem Arial, sans-serif;
+    padding: 1rem;
+    transition: 0.3s;
+}
+
+.insperations ul li a:hover {
+    background: rgb(54, 54, 54);
+    color: rgb(255, 242, 53);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.about, .insperations{
+    padding: 1rem;
+    background: #222;
+}
+
+.about p, blockquote cite {
+    color: rgb(128, 128, 128);
+}
+
+.about h1{
+    font: 2rem Monospace;
+}
+
+.about p, blockquote cite{
+    font: 1rem Courier;
+}
+
+
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+
+
+.mb2 {
+    margin-bottom: 2rem;
+}
+
+.mb1 {
+    margin-bottom: 1rem;
+}
