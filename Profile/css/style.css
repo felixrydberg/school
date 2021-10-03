@@ -119,32 +119,33 @@ footer ul li a:hover {
     margin: 18rem 0 0 0;
     background: #222;
     width: 100%;
+    padding: 1rem 0 5rem 0;
     display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
-.insperations ul li{
-    list-style-type: none;
-    overflow: hidden;
-}
-
-.insperations ul li{
-    float: left;
-}
-
-.insperations ul li a{
+.insperations a{
+    width: 12rem;
     display: block;
     text-decoration: none;
     color: rgb(128, 128, 128);
     font: 1rem Arial, sans-serif;
     padding: 1rem;
     transition: 0.3s;
+    border: 0.1rem solid rgb(255, 242, 53);
+    border-radius: 0.5rem;
+    margin: 0.4rem 0 0 0;
 }
 
-.insperations ul li a:hover {
+.insperations a:hover {
     background: rgb(54, 54, 54);
     color: rgb(255, 242, 53);
 }
 
+.pics {
+    width: 192px;
+}
 
 
 
@@ -159,7 +160,9 @@ footer ul li a:hover {
 
 
 
-.about, .insperations{
+
+
+.about {
     padding: 1rem;
     background: #222;
 }
@@ -185,8 +188,6 @@ main {
     align-content: center;
     flex-direction: column;
 }
-
-
 
 .mb2 {
     margin-bottom: 2rem;
