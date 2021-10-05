@@ -24,7 +24,15 @@
 </header>
 <main> 
   <div class="contacts">
-      <a target="_blank"><div class="contactscontainer"><p>+46 79 313 83 09</p><p href="mailto:felixryd@gmail.com">felixryd@gmail.com</p></div></a>
+    <form action="" method="POST">
+      <label for="mail" class="contactus">Contact us!</label>
+      <input type="text" placeholder="Mail" name="mail" required>
+      <input type="text" placeholder="First Name" name="firstname" required>
+      <input type="text" placeholder="Last Name" name="lastname" required>
+      <input type="text" class="message" placeholder="Message" name="message" required>
+      <input type="submit" class="" value="Submit" name="submit">
+
+    </form>
   </div>
 </main>
 <footer>

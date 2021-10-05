@@ -8,9 +8,6 @@ body{
     background: url("../image/profilealt.png");
 }
 
-
-
-
 .navigation {
     background: #222;
     opacity: 80%;
@@ -160,26 +157,6 @@ footer ul li a:hover {
     text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .contacts {
     padding: 1rem 0 5rem 0;
     display: flex;
@@ -188,7 +165,7 @@ footer ul li a:hover {
     width: 100%;
 }
 
-.contacts a{
+.contacts form{
     width: 12rem;
     display: block;
     text-decoration: none;
@@ -200,18 +177,32 @@ footer ul li a:hover {
     border: 0.1rem solid rgb(255, 242, 53);
     border-radius: 0.5rem;
     margin: 0.4rem 1rem 0 1rem;
+    opacity: 80%;
 }
 
-.contacts a div p {
+.contacts form input{
+    border: 0.1rem solid rgb(255, 242, 53);
+    border-radius: 0.5rem;
     padding: 0.3rem;
+    color: white;
+    background: #222;
 }
 
-.contacts a:hover {
-    background: rgb(54, 54, 54);
-    color: rgb(255, 242, 53);
+.contacts form .message {
+    height: 10rem;
 }
 
+.contactus {
+    font: 2rem;
+}
 
+.insperationhtml {
+    height: 100%;
+  }
+.insperationbody {
+    background: url("../image/wallpaper.jpg") !important;
+    background-size: cover;
+}
 
 
 
