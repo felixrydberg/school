@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background: #222;
+    height: 100%;
+}
+
+main {
+    display:flex;
+    height: 100%;
+    flex-direction: row;
+}
+
+.div-lside, .div-rside {
+    margin: 0.2rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.div-rside div {
+    margin: 0.5rem;
+    height: 50%;
+}
+
+.div-lside {
+    flex: 2;
+}
+
+.div-rside {
+    flex:1
+}
+
+.news {
+    order: 2;
+    border: 0.2rem solid rgb(255, 242, 53);;
+    background: url("../image/news.jpg");
+    background-size: cover;
+    background-position: center;
+
+}
+
+.todo {
+    border: 0.2rem solid rgb(255, 242, 53);;
+    background: url("../image/todo.png");
+    background-size: cover;
+    background-position: center;
+
+}
