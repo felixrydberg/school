@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    display: grid;
+    grid-template: 300px/ auto auto;
+}
+
+main div {
+    border: 2px solid red;
+}
+
+.flextest {
+    display: grid;
+    grid-template: 148px 148px/ auto;
+
+}
+
+.menutest {
+    display: grid;
+    grid-template: repeat(4, auto)/repeat(4, auto);
+}
