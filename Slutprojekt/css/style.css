@@ -122,63 +122,6 @@ main {
     padding: 0 25% 0 25%;    
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Footer */
-footer{
-    background: #0d1117;
-    border-top: 0.2rem solid #242f42;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-}
-
-footer ul li{
-    list-style-type: none;
-    overflow: hidden;
-}
-
-footer ul li{
-    float: left;
-}
-
-footer ul li p {
-    display: block;
-    text-decoration: none;
-    color: #dbdbdb;
-    font: 1rem Arial, sans-serif;
-    padding: 1rem;
-}
-
-footer ul li img {
-    height: 3rem;
-}
-
-
-
-
-
-
-
-
-
-
-
-
 /* Information and Contacts*/
 
 .information, .contacts {
@@ -236,6 +179,44 @@ footer ul li img {
 
 
 
+
+
+
+
+
+
+
+
+/* Footer */
+footer{
+    background: #0d1117;
+    border-top: 0.2rem solid #242f42;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+}
+
+footer ul li{
+    list-style-type: none;
+    overflow: hidden;
+}
+
+footer ul li{
+    float: left;
+}
+
+footer ul li p {
+    display: block;
+    text-decoration: none;
+    color: #dbdbdb;
+    font: 1rem Arial, sans-serif;
+    padding: 1rem;
+}
+
+footer ul li img {
+    height: 3rem;
+}
 
 /* Tablet */
 @media (min-width: 500px) {
