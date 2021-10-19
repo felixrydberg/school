@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
 
+
+
+<!-- TODO:
+Download all videos
+Rename all videos 
+Add sources with media
+Add js support for chrome browsers
+-->
+
+
 <head>
   <meta charset="utf-8">
   <title></title>
@@ -26,18 +36,23 @@
       </nav>
     </header>
     <main>
+      <video class="main-video" autoplay muted loop poster="image/banner.png">
+        <source src="video/1080p.mp4" media="(max-width: 1080px)" type="video/mp4">
+        <source src="video/720p.mp4" media="(max-width: 720px)" type="video/mp4">
+        <source src="video/360p.mp4" media="(max-width: 360px)" type="video/mp4">
+      </video>
       <article class="main-article">
         <h1>Hello!</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis leo tellus, quis blandit tortor volutpat a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;.</p>
       </article>
       <div class="flex-container">
-        <article><a href="css/style.css" target="_blank">
+        <article><a href="video/1080p.mp4">
           <picture>
             <source srcset="image/Projects/Project1/160x160.png" media="(max-width: 500px)">
             <source srcset="image/Projects/Project1/240x240.png" media="(max-width: 700px)">
             <img src="image/Projects/Project1/320x320.png" alt="" />
           </picture>
-          </a><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis leo tellus, quis blandit tortor volutpat a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;.</p>
+          </a><p>Video Test</p>
         </article>
         <article><a href="css/style.css" target="_blank">
           <picture>
@@ -89,16 +104,6 @@
       </ul>
     </footer>
   </div>
-
-
-
-
-
-
-
-
-
-  <script src="js/script.js"></script>
 </body>
 
 </html>
