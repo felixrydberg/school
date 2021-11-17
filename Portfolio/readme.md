@@ -11,4 +11,8 @@ Banner:
     -Breakpoint 2560: 2560x1600
 
 
-    
+Mått: 
+    -Logo 256x256
+
+Portfolio: 
+    -lmao add <br> when writing desc and names

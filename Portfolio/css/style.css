@@ -1,7 +1,7 @@
 * {
      padding: 0;
      margin: 0;
-     font: 1rem 'Mulish', sans-serif;
+     font-family: 'Mulish', sans-serif;
      color: rgb(240, 240, 240);
 }
 
@@ -62,6 +62,7 @@ header nav .nav-buttons li a, header nav .nav-dropdown .nav-dropbutton{
     margin: 0 0.3rem 0 0.3rem;
     border-radius: 0.5rem;
     border: 0.1rem solid #242f42;
+    text-decoration: none;
 
 }
 
@@ -123,10 +124,10 @@ header nav .nav-dropcontent ul li a {
 main {
     grid-row: 2;
     display: grid;
-    grid-template: auto auto / auto;
+    grid-template: auto auto auto/ auto;
 }
 
-main figure {
+main .banner {
     grid-row: 1;
     display: grid;
     grid-template: auto 6rem auto/ auto 12rem auto;
@@ -137,7 +138,7 @@ main figure {
     background-position: center;
 }
 
-main figure article {
+main .banner article {
     grid-row: 2;
     grid-column: 2;
     display: flex;
@@ -147,9 +148,8 @@ main figure article {
     align-items: center;
 }
 
-main figure article p {
+main .banner article p {
     text-align: center;
-    vertical-align: bottom;
     background: rgba(100, 124, 124, 0.7);
     border: 0.1rem solid white;
     border-radius: 0.5rem;
@@ -158,8 +158,43 @@ main figure article p {
 }
 
 main #about {
-    height: 100vh;
+    display: grid;
+    grid-template: 7rem auto / 20% auto 20%;
 }
+
+main #about h1 {
+    grid-row: 1;
+    grid-column: 2;
+    font:2rem 'Mulish', sans-serif;
+    padding: 2rem 0 0 0;
+}
+
+main #about p {
+    grid-row: 2;
+    grid-column: 2;
+    padding: 0 0 2rem 0;
+}
+
+main .portfolio {
+    grid-row: 3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    padding: 4rem 0 0 0;
+    background: url("../image/banner/500x800.png");
+    background-size: cover;
+    background-position: center;
+}
+
+main .portfolio article {
+    width: fit-content;
+    margin: 2rem 2% 2rem 2%;
+    padding: 0.5rem;
+    border: 0.1rem solid #242f42;
+    border-radius: 0.5rem;
+    background: #161d29;
+}
+
 
 /* Footer */
 
@@ -167,7 +202,7 @@ footer{
     grid-row: 3;
 }
 
-@media (min-width: 512px) {
+@media (min-width: 500px) {
     /* Header */
 
     header nav .nav-buttons{
@@ -176,9 +211,10 @@ footer{
 
     /* Main */
     
-        main figure{
+        main .banner, main .portfolio{
             background: url("../image/banner/1024x800.png");
             background-size: cover;
+            background-position: center;
         }
     
     /* Footer */
@@ -189,8 +225,9 @@ footer{
 
     /* Main */
     
-    main figure{
+    main .banner, main .portfolio{
         background: url("../image/banner/1920x1200.png");
+        background-position: center;
         background-size: cover;
     }
 
@@ -202,9 +239,10 @@ footer{
 
     /* Main */
     
-    main figure{
+    main .banner, main .portfolio{
         background: url("../image/banner/2560x1600.png");
         background-size: cover;
+        background-position: center;
     }
 
 /* Footer */
