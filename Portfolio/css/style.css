@@ -127,7 +127,7 @@ main {
     grid-template: auto auto auto/ auto;
 }
 
-main .banner {
+main .banner, main .banner-portfolio {
     grid-row: 1;
     display: grid;
     grid-template: auto 6rem auto/ auto 12rem auto;
@@ -138,7 +138,11 @@ main .banner {
     background-position: center;
 }
 
-main .banner article {
+.main .banner-portfolio {
+    height: 10vh;
+}
+
+main .banner article, main .banner-portfolio article {
     grid-row: 2;
     grid-column: 2;
     display: flex;
@@ -148,7 +152,7 @@ main .banner article {
     align-items: center;
 }
 
-main .banner article p {
+main .banner article p, main .banner-portfolio article p {
     text-align: center;
     background: rgba(100, 124, 124, 0.7);
     border: 0.1rem solid white;
@@ -173,6 +177,23 @@ main #about p {
     grid-row: 2;
     grid-column: 2;
     padding: 0 0 2rem 0;
+}
+
+.main-portfolio .portfolio {
+    grid-row: 3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    padding: 4rem 0 0 0;
+    background: #141a24;
+}
+
+.main-portfolio .portfolio article {
+    width: fit-content;
+    margin: 2rem 2% 2rem 2%;
+    padding: 0.5rem;
+    border: 0.1rem solid #242f42;
+    border-radius: 0.5rem;
 }
 
 main .portfolio {
@@ -211,7 +232,7 @@ footer{
 
     /* Main */
     
-        main .banner, main .portfolio{
+        main .banner, main .portfolio, main .banner-portfolio{
             background: url("../image/banner/1024x800.png");
             background-size: cover;
             background-position: center;
@@ -225,7 +246,7 @@ footer{
 
     /* Main */
     
-    main .banner, main .portfolio{
+    main .banner, main .portfolio, main .banner-portfolio{
         background: url("../image/banner/1920x1200.png");
         background-position: center;
         background-size: cover;
@@ -239,7 +260,7 @@ footer{
 
     /* Main */
     
-    main .banner, main .portfolio{
+    main .banner, main .portfolio, main .banner-portfolio{
         background: url("../image/banner/2560x1600.png");
         background-size: cover;
         background-position: center;
