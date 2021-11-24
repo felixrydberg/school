@@ -10,7 +10,8 @@ html {
 }
 
 body {
-    background: #0d1117;
+    background: #141a24;
+    min-height: 100vh;
 }
 
 .grid-coverer {
@@ -22,6 +23,7 @@ body {
 
 header{
     grid-row: 1;
+    opacity: 0;
 }
 
 header picture{
@@ -63,7 +65,7 @@ header nav .nav-buttons li a, header nav .nav-dropdown .nav-dropbutton{
     border-radius: 0.5rem;
     border: 0.1rem solid #242f42;
     text-decoration: none;
-
+    font-size: 1rem;
 }
 
 header nav .nav-buttons li a:hover, .nav-dropbutton:hover{
@@ -123,6 +125,7 @@ header nav .nav-dropcontent ul li a {
 
 main {
     grid-row: 2;
+    opacity: 0;
     display: grid;
     grid-template: auto auto auto/ auto;
 }
@@ -132,14 +135,13 @@ main .banner, main .banner-portfolio {
     display: grid;
     grid-template: auto 6rem auto/ auto 12rem auto;
     height: calc(100vh - 4rem);
-    background-color: #222;
     background: url("../image/banner/500x800.png");
     background-size: cover;
     background-position: center;
 }
 
-.main .banner-portfolio {
-    height: 10vh;
+.main-portfolio .banner-portfolio {
+    height: 20vh;
 }
 
 main .banner article, main .banner-portfolio article {
@@ -161,39 +163,22 @@ main .banner article p, main .banner-portfolio article p {
 
 }
 
-main #about {
+main #article-about, main .article-portfolio {
     display: grid;
-    grid-template: 7rem auto / 20% auto 20%;
+    grid-template: 7rem auto / 15% auto 15%;
 }
 
-main #about h1 {
+main #article-about h1, main .article-portfolio h1 {
     grid-row: 1;
     grid-column: 2;
     font:2rem 'Mulish', sans-serif;
     padding: 2rem 0 0 0;
 }
 
-main #about p {
+main #article-about p, main .article-portfolio figure {
     grid-row: 2;
     grid-column: 2;
     padding: 0 0 2rem 0;
-}
-
-.main-portfolio .portfolio {
-    grid-row: 3;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-evenly;
-    padding: 4rem 0 0 0;
-    background: #141a24;
-}
-
-.main-portfolio .portfolio article {
-    width: fit-content;
-    margin: 2rem 2% 2rem 2%;
-    padding: 0.5rem;
-    border: 0.1rem solid #242f42;
-    border-radius: 0.5rem;
 }
 
 main .portfolio {
@@ -202,9 +187,7 @@ main .portfolio {
     flex-wrap: wrap;
     justify-content:space-evenly;
     padding: 4rem 0 0 0;
-    background: url("../image/banner/500x800.png");
-    background-size: cover;
-    background-position: center;
+    background: #141a24;
 }
 
 main .portfolio article {
@@ -213,13 +196,12 @@ main .portfolio article {
     padding: 0.5rem;
     border: 0.1rem solid #242f42;
     border-radius: 0.5rem;
-    background: #161d29;
 }
-
 
 /* Footer */
 
 footer{
+    opacity: 0;
     grid-row: 3;
 }
 
@@ -232,7 +214,7 @@ footer{
 
     /* Main */
     
-        main .banner, main .portfolio, main .banner-portfolio{
+        main .banner, main .banner-portfolio{
             background: url("../image/banner/1024x800.png");
             background-size: cover;
             background-position: center;
@@ -246,7 +228,7 @@ footer{
 
     /* Main */
     
-    main .banner, main .portfolio, main .banner-portfolio{
+    main .banner, main .banner-portfolio{
         background: url("../image/banner/1920x1200.png");
         background-position: center;
         background-size: cover;
@@ -260,7 +242,7 @@ footer{
 
     /* Main */
     
-    main .banner, main .portfolio, main .banner-portfolio{
+    main .banner, main .banner-portfolio{
         background: url("../image/banner/2560x1600.png");
         background-size: cover;
         background-position: center;
