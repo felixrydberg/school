@@ -1,8 +1,9 @@
 * {
      padding: 0;
      margin: 0;
-     font-family: 'Mulish', sans-serif;
-     color: rgb(240, 240, 240);
+     font:1rem 'Mulish', sans-serif;
+     /* color: rgb(240, 240, 240); */
+     color: black;
 }
 
 html {
@@ -10,122 +11,62 @@ html {
 }
 
 body {
-    background: #141a24;
+    /* background: #141a24; */
+    background: #fffef0;
     min-height: 100vh;
 }
 
-.grid-coverer {
+.grid-container {
     display: grid;
     grid-template: auto auto auto / auto;
+}
+
+h1 {
+    font-size: 1.5rem;
 }
 
 /* Header */
 
 header{
     grid-row: 1;
-    opacity: 0;
-}
-
-header picture{
-    grid-column: 1;
-    height: 100%;
-
-}
-
-header picture img{
-    object-fit: scale-down;
-    height: 100%;
-}
-
-header nav{
     display: grid;
-    grid-template: 3rem / 3rem auto;
-    background: #141a24;
+    grid-template: 6rem / auto auto auto;
+    border-bottom: 2px solid #575648;
 }
 
-header nav .nav-buttons{
-    grid-column: 2;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
+.nav-one {
+    grid-column: 1;
 }
 
-header nav .nav-buttons li {
+.nav-two {
+    grid-column: 3;
+}
+
+.nav-one ul, .nav-two ul{
     list-style: none;
+    display: grid;
+    grid-template: auto / auto auto;
+    height: 100%;
+}
+
+.nav-one ul li, .nav-two ul li {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    align-items: center;
 }
 
-header nav .nav-buttons li a, header nav .nav-dropdown .nav-dropbutton{
-    display: block;
-    padding: 0.3rem 1rem 0.3rem 1rem;
-    margin: 0 0.3rem 0 0.3rem;
-    border-radius: 0.5rem;
-    border: 0.1rem solid #242f42;
+.nav-one ul li a, .nav-two ul li a {
     text-decoration: none;
-    font-size: 1rem;
 }
 
-header nav .nav-buttons li a:hover, .nav-dropbutton:hover{
-    background: #0d1117;
-}
-
-.nav-dropbutton {
-    background-color: #141a24;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.nav-dropbutton span {
-    color: #2d3c55;
-}
-
-.nav-dropdown{
-    position: relative;
-    display: inline-block;
-}
-
-.nav-dropcontent {
+header picture {
     display: none;
-    position: absolute;
-    right: 0;
-    overflow: auto;
 }
-
-.nav-dropcontent ul{
-    border-radius: 0.5rem;
-    border: 0.1rem solid #242f42;
-    background: #141a24;
-}
-
-.nav-dropcontent ul li{
-    border: none;
-}
-
-header nav .nav-dropcontent ul li a {
-    color: rgb(240, 240, 240);
-    text-decoration: none;
-    display: block;
-    border: none;
-}
-
-.display-block {
-    display: block;
-}
-
-
-
-
-
 
 /* Main */
 
 main {
     grid-row: 2;
-    opacity: 0;
     display: grid;
     grid-template: auto auto auto/ auto;
 }
@@ -144,7 +85,7 @@ main .banner, main .banner-portfolio {
     height: 20vh;
 }
 
-main .banner article, main .banner-portfolio article {
+main .banner article {
     grid-row: 2;
     grid-column: 2;
     display: flex;
@@ -154,67 +95,39 @@ main .banner article, main .banner-portfolio article {
     align-items: center;
 }
 
-main .banner article p, main .banner-portfolio article p {
+main .banner article p {
     text-align: center;
-    background: rgba(100, 124, 124, 0.7);
+    background: rgba(255, 253, 208, 0.5);
     border: 0.1rem solid white;
     border-radius: 0.5rem;
     padding: 1rem;
-
 }
 
-main #article-about, main .article-portfolio {
-    display: grid;
-    grid-template: 7rem auto / 15% auto 15%;
+main .banner article a {
+    color: white;
 }
 
-main #article-about h1, main .article-portfolio h1 {
-    grid-row: 1;
-    grid-column: 2;
-    font:2rem 'Mulish', sans-serif;
-    padding: 2rem 0 0 0;
+main .article, main .about{
+    padding: 3rem 2rem 0 2rem;
 }
 
-main #article-about p, main .article-portfolio figure {
-    grid-row: 2;
-    grid-column: 2;
-    padding: 0 0 2rem 0;
+main .about picture {
+    display: none;
 }
 
-main .portfolio {
-    grid-row: 3;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-evenly;
-    padding: 4rem 0 0 0;
-    background: #141a24;
-}
-
-main .portfolio article {
-    width: fit-content;
-    margin: 2rem 2% 2rem 2%;
-    padding: 0.5rem;
-    border: 0.1rem solid #242f42;
-    border-radius: 0.5rem;
-}
 
 /* Footer */
 
 footer{
-    opacity: 0;
     grid-row: 3;
 }
 
 @media (min-width: 500px) {
     /* Header */
 
-    header nav .nav-buttons{
-        justify-content: left;
-    }
-
     /* Main */
     
-        main .banner, main .banner-portfolio{
+        main .banner{
             background: url("../image/banner/1024x800.png");
             background-size: cover;
             background-position: center;
@@ -226,12 +139,56 @@ footer{
 @media (min-width: 1024px) {
     /* Header */
 
+    header{
+        grid-row: 1;
+        display: grid;
+        grid-template: 6rem / 20rem auto 20rem;
+    }
+
+    header picture {
+        display: flex;
+        justify-content: center;
+    }
+
+    header picture img {
+        height: 6rem;
+        width: 25rem;
+    }
     /* Main */
     
-    main .banner, main .banner-portfolio{
+    main .banner{
         background: url("../image/banner/1920x1200.png");
         background-position: center;
-        background-size: cover;
+    }
+
+    main .article{
+        padding: 4rem 10rem 0 10rem;
+    }
+
+    main .about {
+        display: grid;
+        grid-template: auto / auto auto;
+    }
+
+    main .about picture {
+        display: flex;
+        justify-content: center;
+    }
+
+    main .about picture img{
+        grid-column: 1;
+        width: 20rem;
+        height: 30rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    main .about article {
+        padding: 2rem 0 0 4rem;
+    }
+
+    main .about article h1, main .about article p {
+        grid-column: 2;
     }
 
 /* Footer */ 
@@ -240,11 +197,26 @@ footer{
 @media (min-width: 1920px) {
     /* Header */
 
+    header{
+        grid-row: 1;
+        display: grid;
+        grid-template: 6rem / 20rem auto 20rem;
+    }
+
+    header picture {
+        display: flex;
+        justify-content: center;
+    }
+
+    header picture img {
+        height: 6rem;
+        width: 25rem;
+    }
+
     /* Main */
     
-    main .banner, main .banner-portfolio{
+    main .banner{
         background: url("../image/banner/2560x1600.png");
-        background-size: cover;
         background-position: center;
     }
 

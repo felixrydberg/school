@@ -12,7 +12,9 @@ Banner:
 
 
 Mått: 
-    -Logo 256x256
+    -Logo:
+        breakpoint 1024: 6 x 25 rem
+        breakpoing 1920: 6 x 
 
 Portfolio: 
     -lmao add <br> when writing desc and names
