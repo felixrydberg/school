@@ -24,26 +24,21 @@ Luftfuktighet: data.rh %
 
 API KEY: 5d1dd1bec194429d99de01090d43dac6
 
-Link 1: https://api.weatherbit.io/v2.0/current?lang=sv&
-    lat=${lat}&
-    lon=${lon}&
-    key=5d1dd1bec194429d99de01090d43dac6&
-    include=minutely
+Daily:
 
+Lat:
+https://api.weatherbit.io/v2.0/forecast/daily?key=be8ff8960a0b4942be77aa7dc4843b08&lang=sv&units=m&lat=${lat}&lon=${lon}
 
-Link 2: https://api.weatherbit.io/v2.0/current?lang=sv&
-    key=5d1dd1bec194429d9&
-    city=${city}
-    include=minutely
+City:
 
-Link 3: https://api.weatherbit.io/v2.0/current?lang=sv&
-    key=5d1dd1bec194429d9&
-    postal_code=${zipcode}&
-    country=${country}
-    include=minutely
+https://api.weatherbit.io/v2.0/forecast/daily?key=be8ff8960a0b4942be77aa7dc4843b08&lang=sv&units=m&city=${city}
 
+Current: 
+Lat:
+https://api.weatherbit.io/v2.0/current?key=be8ff8960a0b4942be77aa7dc4843b08&lang=sv&units=m&lat=${lat}&lon=${lon}&days=6
 
-
+City:
+https://api.weatherbit.io/v2.0/current?key=be8ff8960a0b4942be77aa7dc4843b08&lang=sv&units=m&city=${city}&days=6
 
 TODO: 
     Set value of lat lon from api
