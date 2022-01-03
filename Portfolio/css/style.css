@@ -78,7 +78,7 @@ main .banner, main .banner-portfolio {
     height: calc(100vh - 4rem);
     background: url("../image/banner/500x800.png");
     background-size: cover;
-    background-position: center;
+    background-position: top;
 }
 
 .main-portfolio .banner-portfolio {
@@ -111,8 +111,24 @@ main .article, main .about{
     padding: 3rem 2rem 0 2rem;
 }
 
+main .about {
+    display: grid;
+    grid-template: auto / auto auto;
+}
+
 main .about picture {
-    display: none;
+    margin: 2rem 0 0 0;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+}
+
+main .about picture img{
+    grid-column: 1;
+    width: 20rem;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -130,7 +146,7 @@ footer{
         main .banner{
             background: url("../image/banner/1024x800.png");
             background-size: cover;
-            background-position: center;
+            background-position: top;
         }
     
     /* Footer */
@@ -158,7 +174,7 @@ footer{
     
     main .banner{
         background: url("../image/banner/1920x1200.png");
-        background-position: center;
+        background-position: top;
     }
 
     main .article{
@@ -167,12 +183,13 @@ footer{
 
     main .about {
         display: grid;
-        grid-template: auto / auto auto;
+        grid-template: auto auto / auto;
     }
 
     main .about picture {
         display: flex;
         justify-content: center;
+        grid-column: 1;
     }
 
     main .about picture img{
@@ -217,7 +234,7 @@ footer{
     
     main .banner{
         background: url("../image/banner/2560x1600.png");
-        background-position: center;
+        background-position: top;
     }
 
 /* Footer */

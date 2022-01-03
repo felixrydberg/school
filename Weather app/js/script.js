@@ -1,8 +1,19 @@
 // Add event listeners
 document.querySelector("header .form-latlon").addEventListener('submit', function(event){event.preventDefault(); usersearch("lat")});
 document.querySelector("header .form-city").addEventListener('submit', function(event){event.preventDefault();  usersearch("city")});
-let searched=false;
-width = 0;
+window.addEventListener("load", function(){fetchURL(`https://api.ipgeolocation.io/ipgeo?apiKey=ce71d014f78f4924b85db66afeb9177f`, autoresponse)})
+let searched=false,
+width = 10,
+error = false;
+//Callback för window Eventlistener (Gör fetchen, skapar också animationen) 
+function autoresponse(data) {
+    let city =`${data.city}, ${data.country_name}`;
+    fetchURL(`https://api.weatherbit.io/v2.0/current?key=8a23c972397e47c09f3a3188e596ff7f&lang=sv&units=m&city=${city}`, displaymain);
+    fetchURL(`https://api.weatherbit.io/v2.0/forecast/daily?key=8a23c972397e47c09f3a3188e596ff7f&lang=sv&units=m&city=${city}&days=6`, displayside);
+    document.body.appendChild(document.createElement("div")).classList.add("loader");
+    animation(width);
+}
+
 
 // Skickar dem olika requesten till fetchURL, skapar också animationen
 function usersearch(type) {
@@ -32,7 +43,7 @@ function usersearch(type) {
             alert("Form Failed");
         }
         document.body.appendChild(document.createElement("div")).classList.add("loader");
-        animation("0%");
+        animation(width);
     }
 }
 
@@ -47,13 +58,21 @@ function fetchURL(url, callback) {
                 throw 'Fetch failed';
             }
         }).then(function(data){
-            console.log(data)
             callback(data);})
         .catch((error) => errors(error));
 }
 
-function errors(error) {
-    alert(error);
+function errors(message) {
+    if(error===false){
+        alert(message)
+        error=true; 
+        document.querySelector(".loader").remove()
+    }
+    else{
+        error=false;
+        console.log("what");
+        document.querySelector(".loader").remove()
+    }
 }
 
 // Display current api
@@ -90,14 +109,14 @@ function displaymain(json) {
     document.querySelector(".article-today .s-set").innerHTML=`Solnedgång: ${json.data[0].sunset}`;
     document.querySelector(".input-lat").value=json.data[0].lat;
     document.querySelector(".input-lon").value=json.data[0].lon;
-    width = width + 50;
+    width = width + 45;
     animation(width);
 }
 
 // Display daily api
 function displayside(json) {
     searched=true
-    for(let i = 0; i < 5; i++){
+    for(let i = 1; i < 6; i++){
         let article = document.createElement("article");
         let button = document.createElement("button");
         let ul = document.createElement("ul");
@@ -111,7 +130,7 @@ function displayside(json) {
         article.classList.add(i)
         article.appendChild(ul).classList.add("days-title");
         ul.appendChild(li);
-        li.appendChild(document.createElement("img")).src=src=`image/icons/${json.data[i].weather.icon}.png`
+        li.appendChild(document.createElement("img")).src=`image/icons/${json.data[i].weather.icon}.png`
         ul.appendChild(document.createElement("li")).innerHTML=`${json.data[i].temp} °C`
         article.appendChild(button).classList.add("button-others");
         button.innerHTML="▼";
@@ -129,11 +148,11 @@ function displayside(json) {
             }
         })
     }
-    width = width + 50;
+    width = width +45;
     animation(width)
 }
 
-// Display other side info
+// Display side button info
 function displayothers(parent, json) {
     if(!parent.classList.contains("spawned")){
         for(let i = 0; i < document.querySelectorAll(".article-days").length; i++){
@@ -173,25 +192,25 @@ function displayothers(parent, json) {
         document.querySelector(".article-days .w-dir").innerHTML=`Riktning: ${json.data[index].wind_cdir_full}`
     }
 }
-
+//Tar bort alla element och sätter om "toggle" variabler
 function resetpage(type) {
-    document.querySelectorAll(".article-today ul")[0].remove()
-    document.querySelectorAll(".article-today ul")[0].remove()
-    document.querySelectorAll(".article-today ul")[0].remove()
-    document.querySelectorAll(".article-days")[0].remove()
-    document.querySelectorAll(".article-days")[0].remove()
-    document.querySelectorAll(".article-days")[0].remove()
-    document.querySelectorAll(".article-days")[0].remove()
-    document.querySelectorAll(".article-days")[0].remove()
+    todayLength = document.querySelectorAll(".article-today ul").length;
+    daysLength = document.querySelectorAll(".article-days").length;
+    for(let i = 0; i < todayLength; i++){
+        document.querySelectorAll(".article-today ul")[0].remove()
+    }
+    for(let i = 0; i < daysLength; i++){
+        document.querySelectorAll(".article-days")[0].remove()
+    }
     searched=false
-    width=0;
+    width=10;
     usersearch(type)
 }
 
 function animation(width) {
     anime({
         targets: '.loader',
-        width: width+"%", // -> from '28px' to '100%',
+        width: width+"%",
         easing: 'easeInOutQuad',
         duration: 1000
       });
